@@ -1,0 +1,57 @@
+<!-- <%- include ("partials/header") %>
+<div class="container-fluid mt-4">
+    <div class="row justify-content-center">
+    <% movies.forEach(function(movie){ %>
+        <div class="col-auto mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <img class="card-img-top mb-3" src="<%= movie["poster"] %>" alt="Card image">
+                    <h6 class="card-subtitle mb-2"><%= movie["title"] %></h6>
+                    <p class="card-text"><%= movie["plot"] %></p>
+                    <form action="/library/<%= movie._id %>?_method=DELETE" method="POST">
+                    	<div class="form-group">
+                    		<a href="/movie/<%= movie._id %>" class="btn btn-primary">More Info</a>
+                    		<button class="btn btn-primary">Remove from Libray</button>
+						</div>
+					</form>
+                </div>
+            </div>
+        </div>
+    <% }); %>
+    </div>
+</div>
+</body>
+<%- include ("partials/footer") %> -->
+
+<%- include ("partials/header") %>
+
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h1>Welcome to imWatching</h1>
+			<p>Create shelves for movies you are watching or want to watch</p>
+			<p>
+				<a class="btn btn-primary btn-large" href="/library">View My Shelf</a>
+			</p>
+		</div>
+	</header>
+
+	<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+		<%movies.forEach(function(movie){ %>
+			<div class="col-md-3 col-sm-6">
+				<div class="thumbnail">
+					<img src="<%= movie["poster"] %>" class="img-fluid">
+					<div class="caption">
+						<h4><%= movie["title"] %></h4>
+					</div>
+					<p>
+						<a href="/movie/<%= movie._id %>" class="btn btn-primary">More Info</a>
+					</p>
+				</div>
+			</div>
+		<% }); %>
+	</div>
+
+
+</div>
+<%- include("partials/footer") %>

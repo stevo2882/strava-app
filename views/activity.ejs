@@ -1,0 +1,20 @@
+<%- include ("partials/header") %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+		<p class="lead">ImWatching</p>
+	</div>
+		<div class="col-md-9">
+			<div class"thumbnail">
+				<img class="img-responsive" src="https://images.unsplash.com/photo-1589100984317-79246528923c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80">
+				<div class="caption-full">
+					<h4><a><%= activity.name %></a></h4>
+					<p><%= activity.distance %></p>
+				</div>
+			</div>
+			<div class="well">
+			</div>
+		</div>
+	</div>
+</div>
+<%- include("partials/footer") %>
